@@ -203,7 +203,7 @@ class Order(Base):
     admin_id       = Column(Integer, ForeignKey("users.id"))
     notes          = Column(Text)
     admin_notes    = Column(Text)
-    metadata       = Column(JSONB, default=dict)
+    extra_data     = Column(JSONB, default=dict)
     created_at     = Column(DateTime(timezone=True), server_default=func.now())
     updated_at     = Column(DateTime(timezone=True), onupdate=func.now())
     confirmed_at   = Column(DateTime(timezone=True))
